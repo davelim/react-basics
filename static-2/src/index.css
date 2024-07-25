@@ -1,4 +1,42 @@
-:root {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: #21222A;
+  height: 90px;
+  padding: 30px 25px;
+  /* justify-content: space-between; */
+}
+
+.nav--icon {
+  height: 30px;
+  margin-right: 7px;
+}
+
+.nave--logo_text, .nav--title {
+  margin: 0;
+}
+
+.nav--logo_text {
+  margin-right: auto; /* bumps h4 to all the way to the right */
+  color: #61DAFB;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.nav--title {
+  color: #DEEBFB;
+  font-weight: 600;
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +103,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
