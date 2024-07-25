@@ -7,9 +7,9 @@ header {
     width: 100vw;
 }
 .nav {
-    display: flex;
+    display: flex;  /* put child components (e.g. nav-log, nav-items) in a row */
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /* push nav-items to far right */
     align-items: center;
 }
 .nav-logo {
@@ -20,7 +20,7 @@ header {
     display: flex;
     flex-direction: row;
 }
-.nav-items > li {
+.nav-items > li { /* select nav-items unordered list, then select individual list items */
     padding: 5px;
 }
 .main {
