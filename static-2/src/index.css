@@ -43,6 +43,9 @@ body {
   /* height: 100%; */
   padding: 57px 27px;
   color: white;
+  background-image: url("./assets/react-background.png");
+  background-repeat: no-repeat;
+  background-position: right 75%;
 }
 
 .main--title {
