@@ -15,6 +15,12 @@ nav > img {
 section {
   padding: 16px 32px;
 }
+.gray {
+  color: #918E9B;
+}
+.bold {
+  font-weight: bold;
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -37,20 +43,17 @@ section {
 .card {
   display: flex;
   flex-direction: column;
+  width: 175px;
+  font-size: 12px;
 }
 .card--photo {
-  width: 176px;
+  width: 100%;
+}
+.card--rating {
+  display: flex;
+  flex-direction: center;
 }
 .card--star {
   width: 14px;
-}
-.card--lighter {
-  font-weight: lighter;
-}
-.card--title {
-  font-size: small;
-}
-.card--price {
-  font-size: small;
-  font-weight: bold;
+  height: 14px;
 }
