@@ -1,13 +1,14 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import './App.css';
 
 function App() {
 
   return (
-    <>
+    <div className="app">
       <Navbar />
-      <h1>App component</h1>
-    </>
+      <Hero />
+    </div>
   )
 }
 
