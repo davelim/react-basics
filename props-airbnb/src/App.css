@@ -1,4 +1,5 @@
 .app {
+  font-family: "poppins", sans-serif;
 }
 
 nav {
@@ -11,9 +12,12 @@ nav > img {
   max-width: 100px;
 }
 
-.hero {
-  font-family: "poppins", sans-serif;
+section {
   padding: 16px 32px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
 }
 .hero > img {
   /* https://www.w3schools.com/howto/howto_css_image_center.asp
@@ -23,6 +27,9 @@ nav > img {
   margin-left: auto;
   margin-right: auto;
   width: 75vw;
+}
+.hero > h1 {
+  margin-bottom: 16px;
 }
 .hero > p {
   width: 60vw;
