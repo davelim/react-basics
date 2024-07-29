@@ -34,3 +34,23 @@ section {
 .hero > p {
   width: 60vw;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card--photo {
+  width: 176px;
+}
+.card--star {
+  width: 14px;
+}
+.card--lighter {
+  font-weight: lighter;
+}
+.card--title {
+  font-size: small;
+}
+.card--price {
+  font-size: small;
+  font-weight: bold;
+}
