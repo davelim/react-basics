@@ -1,0 +1,27 @@
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-card {
+    border-radius: 8px;
+    box-shadow: 2px 2px 1px 2px gray;
+    display: flex;
+    flex-direction: column;
+    max-width: 256px;
+    margin: 32px 8px;
+    padding: 8px;
+}
+.contact-card > img {
+    border-radius: 4px;
+}
+.info-group {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    margin-bottom: -16px;
+}
+.info-group > img {
+    height: 16px;
+    margin: 4px;
+}
