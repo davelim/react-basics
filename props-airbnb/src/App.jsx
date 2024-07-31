@@ -28,9 +28,9 @@ function App() {
     <div className="app">
       <Navbar />
       <Hero />
-      <div className="cards">
+      <section className="cards-list">
         {cardsJSX}
-      </div>
+      </section>
     </div>
   )
 }
