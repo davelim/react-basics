@@ -17,7 +17,7 @@ function App() {
         img={url.href}
         rating={o.stats.rating}
         reviewCount={o.stats.reviewCount}
-        country={o.location}
+        location={o.location}
         title={o.title}
         price={o.price}
         openSpots={o.openSpots}
