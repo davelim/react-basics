@@ -1,18 +1,17 @@
-import photo from "../assets/katie.png";
 import star from "../assets/star.png";
 
-export default function Card() {
+export default function Card({img, rating, reviewCount, country, title, price}) {
     return (
         <div className="card">
-            <img src={photo} alt="card image" className="card--photo"/>
+            <img src={img} alt="card image" className="card--photo"/>
             <div className="card--rating">
                 <img src={star} alt="star icon" className="card--star" />
-                <span>5.0 </span>
-                <span className="gray">(6) . </span>
-                <span className="gray">USA</span>
+                <span>{rating} </span>
+                <span className="gray">({reviewCount}) . </span>
+                <span className="gray">{country}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p>{title}</p>
+            <p><span className="bold">From {price}</span> / person</p>
         </div>
     );
 }
