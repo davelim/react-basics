@@ -3,25 +3,34 @@ import {makeURL} from "../../utils/file-utils";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
+import data from "./data";
 
 import './App.css';
 
 
 function App() {
-  const url = makeURL("./assets/katie.png", import.meta.url);
+  const cardsJSX = data.map(o => {
+    const url = makeURL(`./assets/${o.coverImg}`, import.meta.url);
+    return (
+      <Card
+        key={o.id}
+        img={url.href}
+        rating={o.stats.rating}
+        reviewCount={o.stats.reviewCount}
+        country={o.location}
+        title={o.title}
+        price={o.price}
+      />
+    );
+  });
 
   return (
     <div className="app">
       <Navbar />
       <Hero />
-      <Card
-        img={url.href}
-        rating="5.0"
-        reviewCount={6}
-        country="USA"
-        title="Life Lessons with Katie Zaferes"
-        price={136}
-        />
+      <div className="cards">
+        {cardsJSX}
+      </div>
     </div>
   )
 }
