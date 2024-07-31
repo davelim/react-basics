@@ -5,7 +5,7 @@ import {makeURL} from "../../utils/file-utils";
 import './App.css'
 
 function App() {
-  const [jokes, setJokes] = useState([]);
+  const [jokesData, setJokesData] = useState([]);
   const url = makeURL("./data/jokes.json", import.meta.url);
 
   useEffect(() => {
@@ -16,12 +16,11 @@ function App() {
         return [];
       })
       .then(data => {
-        console.log(data);
-        setJokes(data);
+        setJokesData(data);
       });
     }, []);
 
-  const jokesJSX = jokes.map((o, idx) => {
+  const jokesJSX = jokesData.map((o, idx) => {
     return (
       <Joke
         key={idx}
