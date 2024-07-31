@@ -40,14 +40,19 @@ section {
 .hero > p {
   width: 60vw;
 }
+.cards {
+  display: flex;
+}
 .card {
   display: flex;
   flex-direction: column;
   width: 175px;
   font-size: 12px;
+  margin: 0px 32px;
 }
 .card--photo {
   width: 100%;
+  height: 256px;
 }
 .card--rating {
   display: flex;
