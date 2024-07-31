@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   const cardsJSX = data.map(o => {
     return (
-      <Card key={o.id} item={o} />
+      <Card key={o.id} {...o} />
     );
   });
 

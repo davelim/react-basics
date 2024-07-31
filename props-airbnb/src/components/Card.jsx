@@ -3,13 +3,12 @@ import {makeURL} from "../../../utils/file-utils";
 import star from "../assets/star.png";
 
 export default function Card(props) {
-    const item = props.item;
-    const url = makeURL(`../assets/${item.coverImg}`, import.meta.url);
+    const url = makeURL(`../assets/${props.coverImg}`, import.meta.url);
 
     let badgeText = null;
-    if (item.openSpots === 0) {
+    if (props.openSpots === 0) {
         badgeText = "SOLD OUT";
-    } else if (item.location === "Online") {
+    } else if (props.location === "Online") {
         badgeText = "ONLINE";
     }
 
@@ -19,12 +18,12 @@ export default function Card(props) {
             <img src={url.href} alt="card image" className="card--photo"/>
             <div className="card--rating">
                 <img src={star} alt="star icon" className="card--star" />
-                <span>{item.stats.rating} </span>
-                <span className="gray">({item.stats.reviewCount}) . </span>
-                <span className="gray">{item.location}</span>
+                <span>{props.stats.rating} </span>
+                <span className="gray">({props.stats.reviewCount}) . </span>
+                <span className="gray">{props.location}</span>
             </div>
-            <p className="card--title">{item.title}</p>
-            <p><span className="bold">From {item.price}</span> / person</p>
+            <p className="card--title">{props.title}</p>
+            <p><span className="bold">From {props.price}</span> / person</p>
         </div>
     );
 }
