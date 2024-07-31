@@ -20,6 +20,7 @@ function App() {
         country={o.location}
         title={o.title}
         price={o.price}
+        openSpots={o.openSpots}
       />
     );
   });
