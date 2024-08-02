@@ -5,7 +5,7 @@ export default [
         googleMapsUrl: "https://tinyurl.com/yvs4wjw8",
         startDate: "12 Jan, 2021",
         endDate: "24 Jan, 2021",
-        description: "Mount Fuiji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site i nJapan, for both Japanese and foreign tourists.",
+        description: "Mount Fuiji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.",
         imageUrl: "https://tinyurl.com/yk5pkce3"
     },
     {

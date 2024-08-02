@@ -14,7 +14,7 @@ header {
 }
 
 header > i {
-  font-size: 64px;
+  font-size: 32px;
 }
 
 header > span {
@@ -25,6 +25,7 @@ header > span {
 .card {
   display: flex;
   margin: 32px;
+  font-size: 12px;
 }
 .card > img {
   width: 192px;
@@ -34,7 +35,30 @@ header > span {
 .card--details {
   display: flex;
   flex-direction: column;
+  margin: 16px;
 }
 .card--location {
   display: flex;
+  align-items: center;
+}
+.card--location > i {
+  color: #F55A5A;
+}
+.card--location > span {
+  margin-left: 4px;
+}
+.card--location > a {
+  margin-left: 12px;
+  color: gray;
+}
+.card--title {
+  font-size: 32px;
+  font-weight: 700;
+}
+.card--date {
+  margin-top: 16px;
+  font-weight: 500;
+}
+.card--description {
+  margin-top: 8px;
 }
