@@ -1,3 +1,23 @@
 .app {
   font-family: "poppins", sans-serif;
+  margin: 4px;
+}
+
+header {
+  border-radius: 8px 8px 0px 0px;
+  background-color: #F55A5A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+header > i {
+  font-size: 64px;
+}
+
+header > span {
+  margin: 4px;
+  font-size: 16px;
 }
