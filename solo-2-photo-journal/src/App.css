@@ -21,3 +21,20 @@ header > span {
   margin: 4px;
   font-size: 16px;
 }
+
+.card {
+  display: flex;
+  margin: 32px;
+}
+.card > img {
+  width: 192px;
+  height: 256px;
+  border-radius: 4px;
+}
+.card--details {
+  display: flex;
+  flex-direction: column;
+}
+.card--location {
+  display: flex;
+}
