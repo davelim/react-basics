@@ -1,25 +1,22 @@
 export default function Meme() {
     return (
-        <div className="input">
-            <div className="text">
-                <label className="textbox">
-                    Top text
-                    <input
-                        name="topText"
-                        placeholder="Shut up" />
-                </label>
-                <label className="textbox">
-                    Bottom text
-                    <input
-                        name="bottomText"
-                        placeholder="And take my money" />
-                </label>
-            </div>
-            <br/>
-            <button type="submit">
-                Get a new meme image
-                <i className="fa-solid fa-image"></i>
-            </button>
-        </div>
+        <main>
+            <form className="form">
+                <input
+                    type="text"
+                    placeholder="Shut up"
+                    className="form--input" />
+                <input
+                    type="text"
+                    placeholder="And take my money"
+                    className="form--input" />
+                <button
+                    type="submit"
+                    className="form--button ">
+                    Get a new meme image
+                    <i className="fa-solid fa-image"></i>
+                </button>
+            </form>
+        </main>
     );
 }
