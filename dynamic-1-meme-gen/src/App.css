@@ -24,3 +24,33 @@ header > h4 {
   font-size: 0.75rem;
   font-weight: 700;
 }
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90vw;
+}
+.text {
+  display: flex;
+  justify-content: space-between;
+  margin-top:24px;
+}
+.textbox {
+  display: flex;
+  flex-direction: column;
+}
+.textbox > input {
+  width: 225px;
+  height: 32px;
+}
+.input > button {
+  background-image: linear-gradient(to right, #672280, #A626D3);
+  color: white;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 16px;
+}
+.input > button > i {
+  margin-left: 4px;
+}
