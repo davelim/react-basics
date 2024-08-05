@@ -3,11 +3,9 @@ import troll from "../assets/troll.png";
 export default function Header() {
     return (
         <header>
-            <div className="header--logo">
-                <img src={troll} />
-                <span>Meme Generator</span>
-            </div>
-            <span>React Course - Project 3</span>
+            <img src={troll} />
+            <h2>Meme Generator</h2>
+            <h4>React Course - Project 3</h4>
         </header>
-    )
+    );
 }
