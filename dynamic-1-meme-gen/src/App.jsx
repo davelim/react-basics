@@ -1,17 +1,19 @@
+import {useState} from "react";
+
 import Header from "./components/Header";
 import Meme from "./components/Meme";
+
 import './App.css'
 
 function App() {
-  let n = 3;
-  const thingsArray = ["Thing 1", "Thing 2"];
+  const [things, setThings] = useState(["Thing 1", "Thing 2"]);
 
   function handleClick() {
-    thingsArray.push(`Thing ${n++}`);
-    console.log(thingsArray);
+    const newThing = `Thing ${things.length+1}`;
+    setThings([...things, newThing]);
   }
 
-  const thingsJSX = thingsArray.map((t, i) => <p key={i}>{t}</p>);
+  const thingsJSX = things.map((t, i) => <p key={i}>{t}</p>);
 
   return (
     <div className="app">
