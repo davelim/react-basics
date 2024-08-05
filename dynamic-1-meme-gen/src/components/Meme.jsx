@@ -1,7 +1,18 @@
+import memesData from "../memesData";
+
+function randomInt(max, min=0) {
+    const minCeil = Math.ceil(min);
+    const maxFloor = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloor - minCeil) + minCeil);
+}
 export default function Meme() {
+    function handleClick() {
+        const idx = randomInt(memesData.data.memes.length);
+        console.log(`${idx}: ${memesData.data.memes[idx].url}`);
+    }
     return (
         <main>
-            <form className="form">
+            <div className="form">
                 <input
                     type="text"
                     placeholder="Shut up"
@@ -12,11 +23,12 @@ export default function Meme() {
                     className="form--input" />
                 <button
                     type="submit"
-                    className="form--button ">
+                    className="form--button"
+                    onClick={handleClick} >
                     Get a new meme image
                     <i className="fa-solid fa-image"></i>
                 </button>
-            </form>
+            </div>
         </main>
     );
 }
