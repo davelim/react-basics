@@ -8,12 +8,24 @@ function randomInt(max, min=0) {
     return Math.floor(Math.random() * (maxFloor - minCeil) + minCeil);
 }
 export default function Meme() {
-    const [memeImage, setMemeImage] = useState(memesData.data.memes[0].url);
+    const [meme, setMeme] = useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    });
+    const [allMemeImages, setAllMemeImages] = useState(memesData);
+
     function getMemeImage() {
-        const memesArray = memesData.data.memes;
+        const memesArray = allMemeImages.data.memes;
         const i = randomInt(memesArray.length);
-        setMemeImage(memesArray[i].url)
+        setMeme(oldMeme => {
+            return {
+                ...oldMeme,
+                randomImage: memesArray[i].url
+            }
+        });
     }
+
     return (
         <main>
             <div className="form">
@@ -33,7 +45,7 @@ export default function Meme() {
                     <i className="fa-solid fa-image"></i>
                 </button>
             </div>
-            <img src={memeImage} className="meme--image"/>
+            <img src={meme.randomImage} className="meme--image"/>
         </main>
     );
 }
