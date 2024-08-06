@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import memesData from "../memesData";
 
 function randomInt(max, min=0) {
@@ -6,9 +8,11 @@ function randomInt(max, min=0) {
     return Math.floor(Math.random() * (maxFloor - minCeil) + minCeil);
 }
 export default function Meme() {
-    function handleClick() {
-        const idx = randomInt(memesData.data.memes.length);
-        console.log(`${idx}: ${memesData.data.memes[idx].url}`);
+    const [memeImage, setMemeImage] = useState(memesData.data.memes[0].url);
+    function getMemeImage() {
+        const memesArray = memesData.data.memes;
+        const i = randomInt(memesArray.length);
+        setMemeImage(memesArray[i].url)
     }
     return (
         <main>
@@ -24,11 +28,12 @@ export default function Meme() {
                 <button
                     type="submit"
                     className="form--button"
-                    onClick={handleClick} >
+                    onClick={getMemeImage} >
                     Get a new meme image
                     <i className="fa-solid fa-image"></i>
                 </button>
             </div>
+            <img src={memeImage} className="meme--image"/>
         </main>
     );
 }

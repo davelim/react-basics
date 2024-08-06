@@ -49,3 +49,9 @@ main {
 .form > button > i {
   margin-left: 4px;
 }
+
+.meme--image {
+  border-radius: 5px;
+  margin-top: 24px;
+  max-width: 100%;
+}
