@@ -1,8 +1,16 @@
+import {useState} from "react";
+
 export default function Joke({setup, punchline}) {
+    const [isShown, setIsShown] = useState(true);
+
+    function handleClick() {
+        setIsShown(prevIsShown => !prevIsShown);
+    }
     return (
         <div>
             {setup && <h3>Setup: {setup}</h3>}
-            <p>{punchline}</p>
+            {isShown && <p>{punchline}</p>}
+            <button onClick={handleClick}>Show punchline</button>
             <hr />
         </div>
     );
