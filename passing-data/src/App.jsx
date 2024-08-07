@@ -8,8 +8,22 @@ import './App.css'
 function App(props) {
   const [boxes, setBoxes] = useState(boxesArr);
 
-  const boxesJSX = boxes.map(b =>  (
-    <Box key={b.id} on={b.on} />
+  function toggle(id) {
+    setBoxes((prevBoxes) => {
+      return prevBoxes.map(b =>
+          b.id === id
+            ? {...b, on: !b.on}
+            : b
+      );
+    });
+  }
+
+  const boxesJSX = boxes.map(b => (
+    <Box
+      key={b.id}
+      id={b.id}
+      on={b.on}
+      handleClick={toggle}/>
   ));
 
   return (
