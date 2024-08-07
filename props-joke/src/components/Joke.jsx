@@ -10,7 +10,7 @@ export default function Joke({setup, punchline}) {
         <div>
             {setup && <h3>Setup: {setup}</h3>}
             {isShown && <p>{punchline}</p>}
-            <button onClick={handleClick}>Show punchline</button>
+            <button onClick={handleClick}>{isShown?"Hide":"Show"} punchline</button>
             <hr />
         </div>
     );
