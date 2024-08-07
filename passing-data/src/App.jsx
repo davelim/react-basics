@@ -9,7 +9,7 @@ function App(props) {
   const [boxes, setBoxes] = useState(boxesArr);
 
   const [formData, setFormData] = useState({
-    firstname: "", lastName: "", email: ""
+    firstName: "", lastName: "", email: ""
   });
   function handleChange(event) {
     setFormData(prev => {
@@ -47,18 +47,22 @@ function App(props) {
           placeholder="First Name"
           onChange={handleChange}
           name="firstName"
+          value={formData.firstName}
         />
         <input
           type="text"
           placeholder="Last Name"
           onChange={handleChange}
           name="lastName"
+          value={formData.lastName}
+
         />
         <input
           type="email"
           placeholder="E-mail"
           onChange={handleChange}
           name="email"
+          value={formData.email}
         />
         <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
       </form>
