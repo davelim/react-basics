@@ -8,14 +8,19 @@ import './App.css'
 function App(props) {
   const [boxes, setBoxes] = useState(boxesArr);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [formData, setFormData] = useState({
+    firstname: "", lastName: "", email: ""
+  });
   function handleChange(event) {
-    if (event.target.name == "firstName")
-      setFirstName(event.target.value);
-    if(event.target.name == "lastName")
-      setLastName(event.target.value);
+    setFormData(prev => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value
+      }
+    });
   }
+  // TODO: look up "ES6, computed properties" e.g. [event.target.name]
+
 
   function toggle(id) {
     setBoxes((prevBoxes) => {
@@ -40,16 +45,22 @@ function App(props) {
         <input
           type="text"
           placeholder="First Name"
-          name="firstName"
           onChange={handleChange}
+          name="firstName"
         />
         <input
           type="text"
           placeholder="Last Name"
-          name="lastName"
           onChange={handleChange}
+          name="lastName"
         />
-        <p>Hello {firstName} {lastName}!</p>
+        <input
+          type="email"
+          placeholder="E-mail"
+          onChange={handleChange}
+          name="email"
+        />
+        <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
       </form>
       <h1>Boxes will go here</h1>
       {boxesJSX}
