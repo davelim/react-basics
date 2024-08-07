@@ -1,10 +1,18 @@
+import {useState} from "react";
+
 export default function Box(props) {
+    const [localOn, setLocalOn] = useState(props.on);
+
     const styles = {
-      backgroundColor: props.on ? "#222222" : "none"
+      backgroundColor: localOn ? "#222222" : "transparent"
     }
-    console.log(props.on, styles.backgroundColor);
+
+    function toggleLocalOn() {
+        setLocalOn(s => !s);
+    }
+
     return (
-        <div className="box" style={styles}>
+        <div className="box" style={styles} onClick={toggleLocalOn}>
         </div>
     );
 }
