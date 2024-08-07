@@ -21,9 +21,8 @@ function App(props) {
   const boxesJSX = boxes.map(b => (
     <Box
       key={b.id}
-      id={b.id}
       on={b.on}
-      handleClick={toggle}/>
+      handleClick={() => toggle(b.id)}/>
   ));
 
   return (

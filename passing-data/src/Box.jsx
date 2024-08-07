@@ -5,7 +5,7 @@ export default function Box(props) {
       backgroundColor: props.on ? "#222222" : "transparent"
     }
     return (
-        <div className="box" style={styles} onClick={() => props.handleClick(props.id)}>
+        <div className="box" style={styles} onClick={props.handleClick}>
         </div>
     );
 }
