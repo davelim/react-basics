@@ -130,11 +130,11 @@ function App(props) {
           <option value="indigo">Indigo</option>
           <option value="violet">Violet</option>
         </select>
-        <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
-        <p>{formData.comments}</p>
-        <p>{formData.employment}</p>
-        <p>{formData.favColor}</p>
       </form>
+      <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
+      <p>{formData.comments}</p>
+      <p>{formData.employment}</p>
+      <p>{formData.favColor}</p>
       <h1>Boxes will go here</h1>
       {boxesJSX}
     </main>
