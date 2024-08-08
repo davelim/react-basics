@@ -9,7 +9,7 @@ function App(props) {
   const [boxes, setBoxes] = useState(boxesArr);
 
   const [formData, setFormData] = useState({
-    firstName: "", lastName: "", email: ""
+    firstName: "", lastName: "", email: "", comments: ""
   });
   function handleChange(event) {
     setFormData(prev => {
@@ -64,7 +64,13 @@ function App(props) {
           name="email"
           value={formData.email}
         />
+        <textarea
+          placeholder="Comments"
+          onChange={handleChange}
+          name="comments"
+          value={formData.comments}/>
         <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
+        <p>{formData.comments}</p>
       </form>
       <h1>Boxes will go here</h1>
       {boxesJSX}
