@@ -9,13 +9,18 @@ function App(props) {
   const [boxes, setBoxes] = useState(boxesArr);
 
   const [formData, setFormData] = useState({
-    firstName: "", lastName: "", email: "", comments: ""
+    firstName: "",
+    lastName: "",
+    email: "",
+    comments: "",
+    isFriendly: true
   });
   function handleChange(event) {
+    const {name, value, type, checked} = event.target;
     setFormData(prev => {
       return {
         ...prev,
-        [event.target.name]: event.target.value
+        [name]: type === "checkbox" ? checked : value
       }
     });
   }
@@ -69,6 +74,14 @@ function App(props) {
           onChange={handleChange}
           name="comments"
           value={formData.comments}/>
+        <input
+          type="checkbox"
+          id="isFriendly"
+          name="isFriendly"
+          checked={formData.isFriendly}
+          onChange={handleChange}/>
+        <label htmlFor="isFriendly">Are you friendly?</label>
+
         <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
         <p>{formData.comments}</p>
       </form>
