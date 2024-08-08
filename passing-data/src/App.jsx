@@ -13,7 +13,8 @@ function App(props) {
     lastName: "",
     email: "",
     comments: "",
-    isFriendly: true
+    isFriendly: true,
+    employmenet: ""
   });
   function handleChange(event) {
     const {name, value, type, checked} = event.target;
@@ -82,6 +83,36 @@ function App(props) {
           onChange={handleChange}/>
         <label htmlFor="isFriendly">Are you friendly?</label>
 
+        <fieldset>
+          <legend>Current employmenet status</legend>
+          <input
+            type="radio"
+            id="unemployed"
+            name="employement"
+            value="unemployed"
+            checked={formData.employmenet === "unemployed"}
+            onChange={handleChange} />
+          <label htmlFor="unemployed">Unemployed</label>
+          <br />
+          <input
+            type="radio"
+            id="part-time"
+            name="employement"
+            value="part-time"
+            checked={formData.employmenet === "part-time"}
+            onChange={handleChange} />
+          <label htmlFor="part-time">Part-time</label>
+          <br />
+          <input
+            type="radio"
+            id="full-time"
+            name="employement"
+            value="full-time"
+            checked={formData.employmenet === "full-time"}
+            onChange={handleChange} />
+          <label htmlFor="full-time">Full-time</label>
+          <br />
+        </fieldset>
         <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
         <p>{formData.comments}</p>
       </form>
