@@ -1,6 +1,4 @@
-import {useState} from "react";
-
-import memesData from "../memesData";
+import {useState, useEffect} from "react";
 
 function randomInt(max, min=0) {
     const minCeil = Math.ceil(min);
@@ -13,7 +11,14 @@ export default function Meme() {
         bottomText: "WALK INTO MORDOR",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     });
-    const [allMemeImages, setAllMemeImages] = useState(memesData);
+
+    const [allMemes, setAllMemes] = useState([]);
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(resp => resp.json())
+            .then(data => setAllMemes(data.data.memes));
+    }, []);
+
     function handleChange(event) {
         const {name, value} = event.target;
         setMeme(prev => {
@@ -25,16 +30,14 @@ export default function Meme() {
     }
 
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes;
-        const i = randomInt(memesArray.length);
+        const i = randomInt(allMemes.length);
         setMeme(oldMeme => {
             return {
                 ...oldMeme,
-                randomImage: memesArray[i].url
+                randomImage: allMemes[i].url
             }
         });
     }
-    console.log(meme);
 
     return (
         <main>
