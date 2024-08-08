@@ -27,6 +27,11 @@ function App(props) {
     });
   }
   // TODO: look up "ES6, computed properties" e.g. [event.target.name]
+  function handleSubmit(event) {
+    event.preventDefault();
+    // submitToApi(formData);
+    console.log(formData);
+  }
 
 
   function toggle(id) {
@@ -48,7 +53,7 @@ function App(props) {
 
   return (
     <main>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="First Name"
@@ -130,6 +135,8 @@ function App(props) {
           <option value="indigo">Indigo</option>
           <option value="violet">Violet</option>
         </select>
+        <br/>
+        <button>Submit</button>
       </form>
       <p>Hello {formData.firstName} {formData.lastName}! ({formData.email})</p>
       <p>{formData.comments}</p>
