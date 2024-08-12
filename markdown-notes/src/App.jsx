@@ -8,8 +8,11 @@ import {nanoid} from "nanoid"
 const KEY = "notes";
 
 export default function App() {
-    const storageNotes = JSON.parse(localStorage.getItem(KEY));
-    const [notes, setNotes] = React.useState(storageNotes || [])
+    const [notes, setNotes] = React.useState(
+        () => {
+            return JSON.parse(localStorage.getItem(KEY)) || [];
+        }
+    );
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     )
