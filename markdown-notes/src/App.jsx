@@ -5,11 +5,17 @@ import { data } from "./data"
 import Split from "react-split"
 import {nanoid} from "nanoid"
 
+const KEY = "notes";
+
 export default function App() {
-    const [notes, setNotes] = React.useState([])
+    const storageNotes = JSON.parse(localStorage.getItem(KEY));
+    const [notes, setNotes] = React.useState(storageNotes || [])
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     )
+    React.useEffect(() => {
+        localStorage.setItem(KEY, JSON.stringify(notes));
+    }, [notes]);
     
     function createNewNote() {
         const newNote = {
