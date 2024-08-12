@@ -1,9 +1,7 @@
 import React from "react"
 
 export default function Sidebar(props) {
-    const currentNoteIndex = props.notes.findIndex(e => e.id === props.currentNote.id);
-    const notes = [props.notes[currentNoteIndex], ...props.notes.toSpliced(currentNoteIndex, 1)];
-    const noteElements = notes.map(note => (
+    const noteElements = props.notes.map(note => (
         <div key={note.id}>
             <div
                 

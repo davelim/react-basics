@@ -30,11 +30,17 @@ export default function App() {
     }
     
     function updateNote(text) {
-        setNotes(oldNotes => oldNotes.map(oldNote => {
-            return oldNote.id === currentNoteId
-                ? { ...oldNote, body: text }
-                : oldNote
-        }))
+        setNotes(oldNotes => {
+            const newNotes = [];
+            for (const note of oldNotes) {
+                if (note.id === currentNoteId) {
+                    newNotes.unshift({...note, body: text});
+                } else {
+                    newNotes.push(note);
+                }
+            }
+            return newNotes;
+        });
     }
     
     function findCurrentNote() {
