@@ -1,7 +1,9 @@
 import React from "react"
 
 export default function Sidebar(props) {
-    const noteElements = props.notes.map(note => (
+    const noteElements = props.notes.map(note => {
+        // const deleteNote = () =>  props.deleteNote(noteId=props.currentNote.id)
+        return (
         <div key={note.id}>
             <div
                 
@@ -13,13 +15,13 @@ export default function Sidebar(props) {
                 <h4 className="text-snippet">{note.body.split("\n")[0]}</h4>
                 <button
                     className="delete-btn"
-                    onClick={props.deleteNote}
+                    onClick={(event) => props.deleteNote(event, note.id)}
                 >
                     <i className="gg-trash trash-icon"></i>
                 </button>
             </div>
         </div>
-    ))
+    )})
 
     return (
         <section className="pane sidebar">

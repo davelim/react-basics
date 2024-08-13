@@ -44,7 +44,9 @@ export default function App() {
     }
 
     function deleteNote(event, noteId) {
-        event.stopPropagation(); // don't propagate click event to parenet element);
+        event.stopPropagation(); // don't propagate click event to parenet element
+        console.log("delete", noteId);
+        setNotes(oldNotes => oldNotes.filter(n => n.id !== noteId));
     }
 
     function findCurrentNote() {
@@ -68,6 +70,7 @@ export default function App() {
                     currentNote={findCurrentNote()}
                     setCurrentNoteId={setCurrentNoteId}
                     newNote={createNewNote}
+                    deleteNote={deleteNote}
                 />
                 {
                     currentNoteId && 
