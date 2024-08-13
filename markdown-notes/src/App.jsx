@@ -19,7 +19,7 @@ export default function App() {
     React.useEffect(() => {
         localStorage.setItem(KEY, JSON.stringify(notes));
     }, [notes]);
-    
+
     function createNewNote() {
         const newNote = {
             id: nanoid(),
@@ -28,7 +28,7 @@ export default function App() {
         setNotes(prevNotes => [newNote, ...prevNotes])
         setCurrentNoteId(newNote.id)
     }
-    
+
     function updateNote(text) {
         setNotes(oldNotes => {
             const newNotes = [];
@@ -42,7 +42,11 @@ export default function App() {
             return newNotes;
         });
     }
-    
+
+    function deleteNote(event, noteId) {
+        event.stopPropagation(); // don't propagate click event to parenet element);
+    }
+
     function findCurrentNote() {
         return notes.find(note => {
             return note.id === currentNoteId
