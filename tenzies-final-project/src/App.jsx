@@ -2,15 +2,15 @@ import { useState } from 'react'
 import Die from "./components/Die.jsx"
 import './App.css'
 
-/*
- * Challenge:
- * - create a separate App component
- * - import and rende the app component here
- * - in app component, render <main> element
- * - style everything to look like the slide
- */
-function App() {
 
+function allNewDice(max, min = 0, len = 1) {
+  return Array.from(
+    {length: len},
+    () => Math.floor(Math.random() * (max - min + 1)) + min
+  );
+}
+function App() {
+  console.log(allNewDice(6, 1, 6));
   return (
     <main>
       <div className="dice">
