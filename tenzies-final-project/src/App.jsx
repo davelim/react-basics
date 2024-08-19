@@ -12,7 +12,11 @@ function App() {
 
   return (
     <main>
-      main
+      <div className="container">
+        <div className="game">
+          <p>game</p>
+        </div>
+      </div>
     </main>
   )
 }
