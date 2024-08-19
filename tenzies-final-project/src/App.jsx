@@ -10,23 +10,15 @@ function allNewDice(max, min = 0, len = 1) {
   );
 }
 function App() {
-  console.log(allNewDice(6, 1, 6));
+  const [diceNumbers, setDiceNumbers] = useState(allNewDice(6, 1, 10));
+  const diceJSX = diceNumbers.map((n, idx) => <Die key={idx} value={n} />);
   return (
     <main>
       <div className="dice">
-        <Die value={1} />
-        <Die value={2} />
-        <Die value={3} />
-        <Die value={4} />
-        <Die value={5} />
-        <Die value={6} />
-        <Die value={1} />
-        <Die value={1} />
-        <Die value={1} />
-        <Die value={1} />
+        {diceJSX}
       </div>
     </main>
-  )
+  );
 }
 
 export default App
