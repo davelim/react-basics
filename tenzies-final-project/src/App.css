@@ -15,23 +15,31 @@ main {
   border-radius: 5px;
   display: flex;  /* move dice to center of <main>*/
   flex-direction: column;  /* move dice to center of <main>*/
+  justify-content: center;  /* move dice to center of <main>*/
   align-items: center;  /* move dice to center of <main>*/
 }
 
 .dice {
   margin: auto;  /* move dice to center of <main>*/
   display: grid;
-  grid-template: 40px 40px / 1fr 1fr 1fr 1fr 1fr;
-  gap: 15px;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
   justify-items: center;
 }
 
 .die {
   background-color: #FFFFFF;
-  width: 36px;
-  box-shadow: 1px 2px 2px gray;
-  border-radius: 5px;
-  text-align: center;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 2px 2px gray;
+  border-radius: 10px;
   font-family: "inter";
-  font-weight: bold;
+  display:flex;  /* center text on div */
+  justify-content: center;  /* center text on div */
+  align-items: center;  /* center text on div */
+  cursor: pointer;
+}
+
+.die-num {
+  font-size: 2rem;
 }
