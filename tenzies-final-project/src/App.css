@@ -13,4 +13,25 @@ main {
   height: 400px;
   max-width: 800px;
   border-radius: 5px;
+  display: flex;  /* move dice to center of <main>*/
+  flex-direction: column;  /* move dice to center of <main>*/
+  align-items: center;  /* move dice to center of <main>*/
+}
+
+.dice {
+  margin: auto;  /* move dice to center of <main>*/
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  justify-items: center;
+}
+
+.die {
+  background-color: #FFFFFF;
+  width: 36px;
+  box-shadow: 1px 2px 2px gray;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "inter";
+  font-weight: bold;
 }
