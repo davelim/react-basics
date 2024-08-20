@@ -6,6 +6,8 @@ body {
   margin: 0;
   background-color: #0B2434;
   padding: 20px;
+  font-family: "inter";
+
 }
 
 main {
@@ -15,12 +17,11 @@ main {
   border-radius: 5px;
   display: flex;  /* move dice to center of <main>*/
   flex-direction: column;  /* move dice to center of <main>*/
-  justify-content: center;  /* move dice to center of <main>*/
   align-items: center;  /* move dice to center of <main>*/
+  justify-content: space-around;
 }
 
 .dice {
-  margin: auto;  /* move dice to center of <main>*/
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
   gap: 20px;
@@ -33,7 +34,6 @@ main {
   width: 50px;
   box-shadow: 0px 2px 2px gray;
   border-radius: 10px;
-  font-family: "inter";
   display:flex;  /* center text on div */
   justify-content: center;  /* center text on div */
   align-items: center;  /* center text on div */
@@ -42,4 +42,21 @@ main {
 
 .die-num {
   font-size: 2rem;
+}
+
+.roll-button {
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer; /* mouse pointer becomes finger when hovering over button */
+}
+.roll-button:focus {
+  outline: none;
+}
+.roll-button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7); /* visual to show button is pressed */
 }
