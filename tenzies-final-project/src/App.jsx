@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from "nanoid";
 import Die from "./components/Die.jsx";
 import './App.css'
@@ -13,12 +13,29 @@ function generateNewDie() {
 }
 function allNewDice() {
   return Array.from(
-    {length: 6},
+    {length: 10},
     () => generateNewDie()
   );
 }
 function App() {
   const [dice, setDice] = useState(allNewDice(6));
+  const [tenzies, setTenzies] = useState(false);
+
+  useEffect(() => {
+    console.log("Dice state changed!");
+    const first = dice[0];
+    let acc = true;
+    for (let i = 1; i < 10; i++) {
+      if (!dice[i].isHeld || dice[i].value !== first.value) {
+        acc = false;
+      }
+    }
+    setTenzies(acc);
+    console.log(tenzies);
+    if (tenzies) {
+      console.log("You won!");
+    }
+  }, [dice]);
 
   function rollDice() {
     setDice(oldDice => oldDice.map(d => {
