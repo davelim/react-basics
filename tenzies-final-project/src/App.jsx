@@ -17,12 +17,36 @@ function allNewDice(max, min = 1, len = 10) {
 }
 function App() {
   const [dice, setDice] = useState(allNewDice(6));
-  let diceElements = dice.map(d => <Die key={d.id} value={d.value} isHeld={d.isHeld} />);
 
   function rollDice() {
-    setDice(allNewDice(6));
+    // setDice(allNewDice(6));
+    const newDice = allNewDice(6);
+    setDice(oldDice => oldDice.map((d, idx) => {
+      return ({
+        ...(d.isHeld ? d : newDice[idx])
+      });
+    }));
   }
 
+  function holdDie(event, id) {
+    console.log(id);
+    event.stopPropagation();
+    setDice(oldDice => oldDice.map(d => {
+      return ({
+        ...d,
+        isHeld: d.id === id ? !d.isHeld : d.isHeld
+      });
+    }));
+  }
+
+  console.log(dice);
+  const diceElements = dice.map(d =>
+    <Die
+      key={d.id}
+      die={d}
+      handleClick={holdDie}
+    />
+  );
   return (
     <main>
       <div className="dice">
