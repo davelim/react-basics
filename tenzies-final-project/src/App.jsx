@@ -23,16 +23,11 @@ function App() {
 
   useEffect(() => {
     console.log("Dice state changed!");
-    const first = dice[0];
-    let acc = true;
-    for (let i = 1; i < 10; i++) {
-      if (!dice[i].isHeld || dice[i].value !== first.value) {
-        acc = false;
-      }
-    }
-    setTenzies(acc);
-    console.log(tenzies);
-    if (tenzies) {
+    const allHeld = dice.every(die => die.isHeld);
+    const firstValue = dice[0].value;
+    const allSameValue = dice.every(die => die.value === firstValue);
+    if (allHeld && allSameValue) {
+      setTenzies(true);
       console.log("You won!");
     }
   }, [dice]);
