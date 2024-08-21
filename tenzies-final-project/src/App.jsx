@@ -11,14 +11,13 @@ function allNewDice(max, min = 1, len = 10) {
   );
   return numArr.map(n => {return {
     value: n,
-    isHeld: false,
+    isHeld: true,
     id: nanoid()
   }});
 }
 function App() {
   const [dice, setDice] = useState(allNewDice(6));
-  let diceElements = dice.map(d => <Die key={d.id} value={d.value} />);
-  console.log(dice);
+  let diceElements = dice.map(d => <Die key={d.id} value={d.value} hold={d.isHeld} />);
 
   function rollDice() {
     setDice(allNewDice(6));

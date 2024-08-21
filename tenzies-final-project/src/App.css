@@ -39,6 +39,9 @@ main {
   align-items: center;  /* center text on div */
   cursor: pointer;
 }
+.held-die {
+  background-color: #59E391;
+}
 
 .die-num {
   font-size: 2rem;
